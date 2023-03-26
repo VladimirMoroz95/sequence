@@ -15,7 +15,7 @@
 
 <script>
   import tbutton from "./tbutton"
-  import team from "./team"
+  import team from "./CreateRoom.vue"
 
   export default {
     computed: {

@@ -1,3 +1,5 @@
+@import "../styles/_variables"
+
 #app
   display: flex
   justify-content: center
@@ -22,3 +24,38 @@ li
 ul
   margin: 0
   padding: 0
+
+h1, h2, h3, h4
+  margin: 0
+
+button
+  border: none
+  margin: 0
+  width: auto
+  overflow: visible
+  background: transparent
+  color: inherit
+  font: inherit
+  line-height: normal
+  -webkit-font-smoothing: inherit
+  -moz-osx-font-smoothing: inherit
+  -webkit-appearance: none
+  padding: 12px 16px
+  cursor: pointer
+
+.success-button
+  background: $successColor
+  color: $lightColor
+  border-radius: 6px
+
+.error-button
+  background: $errorColor
+  color: $lightColor
+  border-radius: 6px
+
+.empty-button
+  border: 1px solid $primaryColor
+  color: $primaryColor
+  border-radius: 6px
+
+

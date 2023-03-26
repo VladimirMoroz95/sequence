@@ -18,6 +18,7 @@ const shuffle = (array) => {
 
 export default new Vuex.Store({
   state: {
+    userName: '',
     mapData: data.map,
     cards: shuffle(data.cards),
     teams: {
@@ -73,6 +74,9 @@ export default new Vuex.Store({
     },
   },
   mutations: {
+    setUserName(state, userName) {
+      state.userName = userName;
+    },
     addPlayer(state, teamName) {
       state.totalCount++
       state.teams[teamName].players.push({

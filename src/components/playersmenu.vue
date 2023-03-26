@@ -14,30 +14,30 @@
 </template>
 
 <script>
-  export default {
-    computed: {
-      players() {
-        return this.$store.state.players
-      },
-      currentUserIndex() {
-        return this.$store.state.currentUserIndex
-      },
-      redTeamPoints() {
-        return this.$store.getters.redTeamPoints
-      },
-      blueTeamPoints() {
-        return this.$store.getters.blueTeamPoints
-      },
-      greenTeamPoints() {
-        return this.$store.getters.greenTeamPoints
-      },
+export default {
+  computed: {
+    players() {
+      return this.$store.state.players
     },
-    methods: {
-      getPoints(team) {
-        return this[`${team}TeamPoints`]
-      }
+    currentUserIndex() {
+      return this.$store.state.currentUserIndex
     },
-  }
+    redTeamPoints() {
+      return this.$store.getters.redTeamPoints
+    },
+    blueTeamPoints() {
+      return this.$store.getters.blueTeamPoints
+    },
+    greenTeamPoints() {
+      return this.$store.getters.greenTeamPoints
+    },
+  },
+  methods: {
+    getPoints(team) {
+      return this[`${team}TeamPoints`]
+    }
+  },
+}
 </script>
 
 <style scoped lang="sass">

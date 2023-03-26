@@ -9,6 +9,12 @@
   import notification from "./components/notification"
 
   export default {
+    sockets: {
+      connect: function () {
+        console.log('socket to notification channel connected')
+      },
+    },
+
     components: {
       notification
     }
