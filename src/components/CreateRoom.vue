@@ -1,12 +1,6 @@
 <template>
   <div class="room-wrapper">
-    <input
-      v-if="isEditRoomNameMode"
-      class="room-name"
-      @keydown.enter="isEditRoomNameMode = false"
-      v-model="roomName"
-    />
-    <h2 v-else class="room-name" @click.stop="isEditRoomNameMode = true">{{ roomName }}</h2>
+    <h2 class="room-name">New room</h2>
 
     <h3 class="room-type-label">Select number of players:</h3>
     <div class="room-type-wrapper">
@@ -31,7 +25,6 @@ export default {
 
   data() {
     return {
-      roomName: 'Room name',
       isEditRoomNameMode: false,
       roomTypes: ['2', '3', '4', '6', '8'],
       activeType: '2'
@@ -39,10 +32,21 @@ export default {
   },
 
   methods: {
-    createRoom() {
-
+    async createRoom() {
+      const result = this.$socket.emit('createGame', {
+        name: this.userName,
+        numPlayers: Number(this.activeType),
+        team: 'RED'
+      })
+      console.log('result', result);
     }
   },
+
+  computed: {
+    userName() {
+      return this.$store.state.userName;
+    }
+  }
 }
 </script>
 

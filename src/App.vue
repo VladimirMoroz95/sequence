@@ -13,6 +13,9 @@
       connect: function () {
         console.log('socket to notification channel connected')
       },
+      createGame: function (data) {
+        console.log('socket createGame event', data);
+      }
     },
 
     components: {

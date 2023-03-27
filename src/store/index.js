@@ -74,6 +74,9 @@ export default new Vuex.Store({
     },
   },
   mutations: {
+    socket_createGame(state, data) {
+      console.log('socket_createGame', data);
+    },
     setUserName(state, userName) {
       state.userName = userName;
     },
@@ -134,6 +137,9 @@ export default new Vuex.Store({
   },
 
   actions: {
+    socket_createGame(state, data) {
+      console.log('socket_createGame action', data);
+    },
     calculate({ state }, { startPosition, team, step }) {
       const { mapData } = state
       for(

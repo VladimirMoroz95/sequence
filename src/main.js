@@ -6,25 +6,22 @@ import router from './router'
 import store from './store/index'
 import _ from 'lodash';
 import VueSocketIO from 'vue-socket.io'
-import SocketIO from 'socket.io-client'
 
 Vue.prototype._ = _
 Vue.config.productionTip = false
 
-const options = {
-  extraHeaders: {"my-custom-header": 'abas'},
-  withCredentials: true,
-}
-
 Vue.use(new VueSocketIO({
-  debug: true,
-  connection: SocketIO('http://localhost:8080', options),
+  debug: false,
+  connection: 'http://109.231.24.160:8080',
   vuex: {
     store,
-    actionPrefix: 'SOCKET_',
-    mutationPrefix: 'SOCKET_'
+    actionPrefix: 'socket_',
+    mutationPrefix: 'socket_'
   },
-  //options: { path: "/my-app/" } //Optional options
+  options: {
+    extraHeaders: {'my-custom-header': 'abas'},
+    withCredentials: true,
+  }
 }))
 
 /* eslint-disable no-new */
