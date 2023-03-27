@@ -6,20 +6,20 @@ import router from './router'
 import store from './store/index'
 import _ from 'lodash';
 import VueSocketIO from 'vue-socket.io'
+import { io } from 'socket.io-client';
 
 Vue.prototype._ = _
 Vue.config.productionTip = false
 
 Vue.use(new VueSocketIO({
   debug: false,
-  connection: 'http://109.231.24.160:8080',
+  connection: io('http://localhost:8080'),
   vuex: {
     store,
     actionPrefix: 'socket_',
     mutationPrefix: 'socket_'
   },
   options: {
-    extraHeaders: {'my-custom-header': 'abas'},
     withCredentials: true,
   }
 }))
