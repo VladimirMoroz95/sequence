@@ -15,7 +15,10 @@
       },
       createGame: function (data) {
         console.log('socket createGame event', data);
-      }
+      },
+      createGameSuccess: function (data) {
+        console.log("Create game success; RoomId: ", data)
+      },
     },
 
     components: {
